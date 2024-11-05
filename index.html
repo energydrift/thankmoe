@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You MOE for the new DMA</title>
+    <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://w7.pngwing.com/pngs/252/783/png-transparent-red-button-botton-orange-sphere-button-thumbnail.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-database.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="top-container">
+    <h1 id="thankYouHeading">Thank You MOE for the new DMA!!</h1>
+    <p id="thankYouCount">MOE has been thanked <span id="thankCount" style="font-size: 30px; font-weight: 600;">0</span> times so far.</p>
+    <p>Click on the button below to thank MOE</p>
+    <button id="thankYouButton"></button>
+  </div>
+  <div class="second-container">
+    <p>Leave a message to thank MOE 50 times!</p>
+    <input type="text" id="messageInput" placeholder="Write your message here...">
+    <button id="sendButton" class="hidden">Send</button>
+  </div>
+    
+    <div id="messageSection" class="hidden">
+        <p id="messageCount">There are <span id="totalMessages">0</span> messages:</p>
+        <div id="messagesContainer"></div>
+    </div>
+</body>
+</html>
