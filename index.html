@@ -2,31 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Thank You MOE for the new DMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You MOE</title>
     <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="https://w7.pngwing.com/pngs/252/783/png-transparent-red-button-botton-orange-sphere-button-thumbnail.png" type="image/png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-firestore.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-database.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="auto-response hidden" id="autoResponseMessage"></div>
   <div class="top-container">
     <h1 id="thankYouHeading">Thank You MOE for the new DMA!!</h1>
-    <p id="thankYouCount">MOE has been thanked <span id="thankCount" style="font-size: 30px; font-weight: 600;">0</span> times so far.</p>
-    <p>Click on the button below to thank MOE</p>
+    <p id="thankYouCount">MOE has been thanked <span id="thankCount" style="font-size: 30px; font-weight: 600;">0</span> times.</p>
+    <p class="small-p">Click on the button below to thank MOE</p>
     <button id="thankYouButton"></button>
+    <button id="whywearedoingthis">Click for Context</button>
   </div>
   <div class="second-container">
-    <p>Leave a message to thank MOE 50 times!</p>
-    <input type="text" id="messageInput" placeholder="Write your message here...">
+    <p class="larger-p">Leave a message!</p>
+    <p class="smaller-p">Each message adds 50 thanks.</p>
+    <textarea id="messageInput" placeholder="Write your message here"></textarea>
     <button id="sendButton" class="hidden">Send</button>
   </div>
     
     <div id="messageSection" class="hidden">
-        <p id="messageCount">There are <span id="totalMessages">0</span> messages:</p>
+        <p id="messageCount">There are <span id="totalMessages">0</span> messages</p>
+        <hr>
         <div id="messagesContainer"></div>
     </div>
+    
+    <div id="explanationModal" class="modal hidden">
+      <div class="modal-content">
+          <span id="closeModalButton" class="close">&times;</span>
+          <h2>Why we dislike the new DMA</h2>
+          <p>
+              The new Digital Monitoring Application (DMA) installed on our devices by MOE has caused widespread frustration among students. Here are the primary reasons why it is seen as problematic:
+          </p>
+          <h3>1. Intrusive Monitoring</h3>
+          <p>
+              The new DMA, Lightspeed Systems, constantly monitors our digital activities, creating a feeling of constant surveillance. Many of us feel that our privacy is being invaded, as even non-academic activities are tracked. This creates an atmosphere of mistrust and limits students' freedom.
+          </p>
+          <h3>2. Limited Flexibility for Learning</h3>
+          <p>
+              Many educational tools, resources, and websites have been blocked by Lightspeed Systems, even if they contribute to learning. For example, websites for coding practice, online reading materials, and collaborative tools are restricted, affecting our ability to work independently and expand our knowledge. Furthermore, popular educational websites like Youtube, have also been blocked. Maany students fear that the strict control that the DMA has over their computers, could inadvertently hinder their learning, making PLDs seem useless.
+          </p>
+          <h3>3. Reduced Digital Skills Development</h3>
+          <p>
+              In a world where digital literacy is essential, overly restrictive software hinders students from developing critical digital skills. Students need the ability to explore various tools and platforms to gain real-world experience, but DMA limits our ability to do so.
+          </p>
+          <p>
+              In summary, students feel that the Digital Monitoring Agreement (DMA) is an excessively restrictive and intrusive measure that compromises our freedom and hinders our ability to learn effectively. A more balanced approach that respects privacy while ensuring a safe learning environment would be far more advantageous. To facilitate this, we have created this website as a platform for students to voice their concerns and advocate for a reevaluation of the DMA by the Ministry of Education (MOE). We encourage all students to utilise this platform to share their thoughts and experiences while maintaining anonymity to protect everyone's identity.
+          </p>
+      </div>
+  </div>
 </body>
 </html>
