@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-bottom: 120px;
+}
+
+.top-container {
+  height: 90vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+h1 {
+    font-size: 40px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#thankYouCount {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+#thankYouButton {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50%; /* Make the button circular */
+    width: 120px; /* Fixed width for the circle */
+    height: 120px; /* Fixed height for the circle */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+#thankYouButton:active {
+    transform: translateY(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Move down by 5 pixels on click */
+}
+
+p {
+  font-size: 20px;
+}
+
+button:hover {
+    background-color: #2e90e9;
+}
+
+.second-container {
+  height: fit-content;
+  background: #f1f1f1;
+  padding: 70px;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+    padding: 15px 30px;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    width: 360px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#sendButton {
+  padding: 15px 30px;
+  width: 360px;
+  background: #000;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#sendButton:active {
+  opacity: 0.5;
+}
+
+.hidden {
+    display: none;
+}
+
+#messagesContainer {
+  padding: 20px 100px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; /* Space between columns */
+    flex-wrap: wrap; /* Allow wrapping of columns */
+}
+
+.column {
+    flex: 0 0 32%; /* Each column takes 30% of the container */
+    margin: 0 2px; /* Margin between columns */
+}
+
+.message {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 20px ;
+    margin: 15px 0;
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 768px) {
+    .column {
+        flex: 0 0 48%; /* Each column takes 48% of the container */
+    }
+    
+    #messagesContainer {
+     padding: 20px 10px;
+    }
+    
+    #thankYouCount {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+}
+
+/* For small screens (mobile devices) */
+@media (max-width: 480px) {
+    .column {
+        flex: 0 0 100%; /* Each column takes 100% of the container */
+        margin: 5px 0; /* Adjust margin for smaller screens */
+    }
+    #messagesContainer {
+     padding: 20px 10px;
+    }
+    #thankYouCount {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+}
