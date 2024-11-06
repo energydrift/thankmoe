@@ -105,7 +105,7 @@ document.addEventListener('contextmenu', (event) => {
 
 thankYouCountRef.on('value', (snapshot) => {
     const count = snapshot.val() || 0;
-    thankCountSpan.textContent = count;
+    thankCountSpan.textContent = count.toLocaleString(); // Adds commas to the count
 });
 
 thankYouButton.addEventListener('click', () => {
@@ -221,3 +221,25 @@ window.addEventListener('click', (event) => {
 
 // Initial load of messages
 loadMessages();
+
+
+// Function to simulate automatic "thank you" clicks at random intervals
+function simulateRandomClicks() {
+    const minInterval = 1; // Minimum interval (in ms) between auto-clicks
+    const maxInterval = 1000; // Maximum interval (in ms) between auto-clicks
+
+    function autoClick() {
+        // Increment the count as if it's a "thank you" click
+        thankYouCountRef.transaction(count => (count || 0) + 1);
+
+        // Set a new random interval for the next auto-click
+        const nextClickInterval = Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
+        setTimeout(autoClick, nextClickInterval);
+    }
+
+    // Start the first auto-click
+    autoClick();
+}
+
+// Start the random auto-click simulation
+simulateRandomClicks();
